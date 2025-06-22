@@ -1,0 +1,44 @@
+<html>
+<head>
+  <title>Student Grade Checker</title>
+</head>
+<body>
+  <h2>Enter Student Marks</h2>
+  <input type="number" id="marksInput" placeholder="Enter marks (0-100)">
+  <button onclick="checkGrade()">Get Grade</button>
+
+  <p id="result"></p>
+
+  <script>
+    function checkGrade() {
+      const marks = parseInt(document.getElementById("marksInput").value);
+      let grade;
+
+      switch (true) {
+        case (marks >= 90 && marks <= 100):
+          grade = 'A';
+          break;
+        case (marks >= 80 && marks < 90):
+          grade = 'B';
+          break;
+        case (marks >= 70 && marks < 80):
+          grade = 'C';
+          break;
+        case (marks >= 60 && marks < 70):
+          grade = 'D';
+          break;
+        case (marks >= 50 && marks < 60):
+          grade = 'E';
+          break;
+        case (marks >= 0 && marks < 50):
+          grade = 'F';
+          break;
+        default:
+          grade = 'Invalid marks';
+      }
+
+      document.getElementById("result").textContent = `Grade: ${grade}`;
+    }
+  </script>
+</body>
+</html>
